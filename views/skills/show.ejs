@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= skill.skill %> Skill Listing</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Skill #<%= skillNum %></h1>
+  <h3><%= skill.skill %></h3>
+  <h3>Proficiency: <% if(skill.proficiency === 'expert'){ %>
+    <%= '🤑' %>
+    <% }  else if (skill.proficiency === 'intermediate') {%>
+    <%= '🙂' %>
+    <% } else { %>
+    <%= '👨‍🎓' %>
+    <% } %></h3>
+    <a href="/skills/<%= skillNum - 1 %>/edit">Edit this Skill</a>
+    <form action="/skills/<%= skillNum - 1 %>?_method=DELETE" method="POST">
+      <button type="submit">Delete This Skill</button>
+    </form>
+</body>
+
+</html>
